@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hz Site Status</title>
+    <style>
+        /* Custom Scroll Bar --------------------------------------------------------*/
+
+        /* Default scrollbar styles */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Hide scrollbar on mobile devices */
+        @media (max-width: 767px) {
+
+            /* Hide scrollbar */
+            body {
+                overflow: auto;
+                /* or overflow: hidden; */
+            }
+
+            /* Optionally, you can also hide the scrollbar on specific elements */
+            /* For example, to hide scrollbar on a specific div with class "content" */
+            .content {
+                overflow: auto;
+                /* or overflow: hidden; */
+            }
+        }
+
+
+        /* --------------------------------------------------------*/
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 60px;
+            /* Added padding to accommodate footer */
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        /*  Added By Admin--------------------------*/
+
+        .card-content h3 {
+            text-align: center;
+        }
+
+        /* ---------------------------------------- */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .active-status {
+            color: #28a745;
+            background-color: #d4edda;
+        }
+
+        .inactive-status {
+            color: #dc3545;
+            background-color: #f8d7da;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Hz Site Status</h1>
+    </div>
+    <div class="container">
+
+        <!-- Website 1 -->
+
+        <div class="card">
+            <div class="card-content">
+                <h3>Website 1 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, ipsum.</h3>
+                <table>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td><span class="url" onclick="copyUrl('www.website1.com')">www.website1.com</span></td>
+                    </tr>
+                    <tr>
+                        <td>Created Date</td>
+                        <td>January 1, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>Last Modified Date</td>
+                        <td>March 20, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td><span class="status active-status">Active</span></td>
+                    </tr>
+                </table>
+                <div class="btn-container">
+                    <a href="www.website1.com" class="btn">View Site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Website 2 -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Website 2</h3>
+                <table>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td><span class="url" onclick="copyUrl('www.website2.com')">www.website2.com</span></td>
+                    </tr>
+                    <tr>
+                        <td>Created Date</td>
+                        <td>February 15, 2022</td>
+                    </tr>
+                    <tr>
+                        <td>Last Modified Date</td>
+                        <td>April 1, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td><span class="status inactive-status">Inactive</span></td>
+                    </tr>
+                </table>
+                <div class="btn-container">
+                    <a href="www.website2.com" class="btn">View Site</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Add more cards for additional websites -->
+
+
+    </div>
+
+    <footer>Made by Hz ❤️
+        <a href="https://www.instagram.com/its_hzprojects/" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" weidth="14" viewBox="0 0 16 16" id="instagram">
+                <linearGradient id="a" x1="1.464" x2="14.536" y1="14.536" y2="1.464" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#FFC107"></stop>
+                    <stop offset=".507" stop-color="#F44336"></stop>
+                    <stop offset=".99" stop-color="#9C27B0"></stop>
+                </linearGradient>
+                <path fill="url(#a)"
+                    d="M11 0H5a5 5 0 0 0-5 5v6a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zm3.5 11c0 1.93-1.57 3.5-3.5 3.5H5c-1.93 0-3.5-1.57-3.5-3.5V5c0-1.93 1.57-3.5 3.5-3.5h6c1.93 0 3.5 1.57 3.5 3.5v6z">
+                </path>
+                <linearGradient id="b" x1="5.172" x2="10.828" y1="10.828" y2="5.172" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#FFC107"></stop>
+                    <stop offset=".507" stop-color="#F44336"></stop>
+                    <stop offset=".99" stop-color="#9C27B0"></stop>
+                </linearGradient>
+                <path fill="url(#b)"
+                    d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 6.5A2.503 2.503 0 0 1 5.5 8c0-1.379 1.122-2.5 2.5-2.5s2.5 1.121 2.5 2.5c0 1.378-1.122 2.5-2.5 2.5z">
+                </path>
+                <linearGradient id="c" x1="11.923" x2="12.677" y1="4.077" y2="3.323" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#FFC107"></stop>
+                    <stop offset=".507" stop-color="#F44336"></stop>
+                    <stop offset=".99" stop-color="#9C27B0"></stop>
+                </linearGradient>
+                <circle cx="12.3" cy="3.7" r=".533" fill="url(#c)"></circle>
+            </svg>
+        </a>
+    </footer>
+
+    <script>
+        function copyUrl(url) {
+            var tempInput = document.createElement('input');
+            tempInput.value = url;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('URL copied to clipboard: ' + url);
+        }
+    </script>
+</body>
+
+</html>
